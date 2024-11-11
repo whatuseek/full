@@ -18,15 +18,10 @@ const verifySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
-    // date: {
-    //   type: Date,
-    //   default: Date.now,
-    // },
   },
     {
-        collection: "verifyUser",
+        collection: "VerifyUser",
     }
 );
 
-module.exports = mongoose.model("verifyUser", verifySchema);
+module.exports = mongoose.model("VerifyUser", verifySchema);

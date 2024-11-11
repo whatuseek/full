@@ -5,7 +5,6 @@ const nodemailer = require("nodemailer");
 // require("dotenv").config(); 
 //⬆️or below⬇️
 const dotenv = require('dotenv');
-
 dotenv.config();
 
 
@@ -15,13 +14,14 @@ service: "gmail",
 //   port: 587,
 //   secure: false,
     auth: {
+
     user: process.env.nodeMailer_User,
-    pass: process.env.nodeMailer_Pass   ,
+    pass: process.env.nodeMailer_Pass,
   },
 });
 
 // Send email function
-function sendEmail(toEmail,subject,content){
+function sendMail(toEmail,subject,content){
     const mailOptions = {
     from: process.env.nodeMailer_User,
     to: toEmail,
@@ -39,7 +39,7 @@ function sendEmail(toEmail,subject,content){
   });
 }
 
-module.exports = sendEmail; // Exporting the function for use in other files.
+module.exports = sendMail; // Exporting the function for use in other files.
 
 // Example usage
 // sendEmail("recipient@example.com", "Test Subject", "Hello, this is a test email!");

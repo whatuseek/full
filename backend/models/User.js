@@ -4,7 +4,6 @@ const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      //   required: true,
     },
     email: {
       type: String,
@@ -15,18 +14,16 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    token: {
-      type: String,
-    //   required: true,
-    },
-
     joinedOn: {
       type: Date,
-      default: Date.now,
+      default: Date.now(),
     },
     forgetPassword:{
-        type:Date,
+        time:Date,
         otp:String,
+    },
+    token: {
+      type: String,
     }
   },
   {
